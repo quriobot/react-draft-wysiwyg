@@ -1,8 +1,8 @@
 module.exports = {
 
   // Generic
-  'generic.add': 'Toevoegen',
-  'generic.cancel': 'Annuleer',
+  'generic.add': 'Add',
+  'generic.cancel': 'Cancel',
 
   // BlockType
   'components.controls.blocktype.h1': 'H1',
@@ -13,13 +13,13 @@ module.exports = {
   'components.controls.blocktype.h6': 'H6',
   'components.controls.blocktype.blockquote': 'Blockquote',
   'components.controls.blocktype.code': 'Code',
-  'components.controls.blocktype.blocktype': 'Blok type',
-  'components.controls.blocktype.normal': 'Normaal',
+  'components.controls.blocktype.blocktype': 'Block Type',
+  'components.controls.blocktype.normal': 'Normal',
 
   // Color Picker
-  'components.controls.colorpicker.colorpicker': 'Kleur kiezer',
-  'components.controls.colorpicker.text': 'Tekst',
-  'components.controls.colorpicker.background': 'Achtergrond',
+  'components.controls.colorpicker.colorpicker': 'Color Picker',
+  'components.controls.colorpicker.text': 'Text',
+  'components.controls.colorpicker.background': 'Background',
 
   // Embedded
   'components.controls.embedded.embedded': 'Embedded',
@@ -36,12 +36,12 @@ module.exports = {
   'components.controls.fontsize.fontsize': 'Font Size',
 
   // History
-  'components.controls.history.history': 'Geschiedenis',
+  'components.controls.history.history': 'History',
   'components.controls.history.undo': 'Undo',
   'components.controls.history.redo': 'Redo',
 
   // Image
-  'components.controls.image.image': 'Beeld',
+  'components.controls.image.image': 'Image',
   'components.controls.image.fileUpload': 'File Upload',
   'components.controls.image.byURL': 'URL',
   'components.controls.image.dropFileText': 'Drop the file or click to upload',
