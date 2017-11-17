@@ -114,6 +114,7 @@ class LayoutComponent extends Component {
         <span className="rdw-link-modal-label">
           {translations['components.controls.link.linkTarget']}
         </span>
+        123
         <input
           className="rdw-link-modal-input"
           onChange={this.updateValue}
