@@ -24,7 +24,7 @@ class LayoutComponent extends Component {
 
   state: Object = {
     showModal: false,
-    linkTarget: this.props.config.defaultTarget || '',
+    linkTarget: 'http://',
     linkTitle: '',
     linkTargetOption: this.props.config.defaultTargetOption,
   };
@@ -33,7 +33,7 @@ class LayoutComponent extends Component {
     if (this.props.expanded && !props.expanded) {
       this.setState({
         showModal: false,
-        linkTarget: this.props.config.defaultTarget || '',
+        linkTarget: 'http://',
         linkTitle: '',
         linkTargetOption: this.props.config.defaultTargetOption,
       });
