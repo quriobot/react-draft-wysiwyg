@@ -33,7 +33,7 @@ class LayoutComponent extends Component {
     if (this.props.expanded && !props.expanded) {
       this.setState({
         showModal: false,
-        linkTarget: '',
+        linkTarget: this.props.config.defaultTarget || '',
         linkTitle: '',
         linkTargetOption: this.props.config.defaultTargetOption,
       });
