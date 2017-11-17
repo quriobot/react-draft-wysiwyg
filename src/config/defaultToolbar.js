@@ -110,6 +110,7 @@ export default {
     component: undefined,
     popupClassName: undefined,
     dropdownClassName: undefined,
+    defaultTarget: undefined,
     showOpenOptionOnHover: true,
     defaultTargetOption: '_self',
     options: ['link', 'unlink'],
