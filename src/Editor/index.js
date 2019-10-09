@@ -8,7 +8,9 @@ import {
   RichUtils,
   convertToRaw,
   convertFromRaw,
-  CompositeDecorator
+  CompositeDecorator,
+  getDefaultKeyBinding,
+  KeyBindingUtil
 } from "draft-js";
 import {
   changeDepth,
@@ -36,6 +38,8 @@ import defaultToolbar from "../config/defaultToolbar";
 import localeTranslations from "../i18n";
 import "./styles.css";
 import "../../css/Draft.css";
+
+const {hasCommandModifier} = KeyBindingUtil;
 
 export default class WysiwygEditor extends Component {
   static propTypes = {
@@ -449,6 +453,19 @@ export default class WysiwygEditor extends Component {
     return false;
   };
 
+  keyBindingFn = (e) => {
+    // arrowDown and arrowUp
+    if (e.keyCode === 40 || e.keyCode === 38) {
+      this.onUpDownArrow(e);
+      return null;
+    }
+    if (e.keyCode === 9) {
+      this.onTab(e);
+      return null;
+    }
+    return getDefaultKeyBinding(e);
+  }
+
   preventDefault: Function = (event: Object) => {
     if (event.target.tagName === "INPUT" || event.target.tagName === "LABEL" || event.target.tagName === "TEXTAREA") {
       this.focusHandler.onInputMouseDown();
@@ -533,9 +550,7 @@ export default class WysiwygEditor extends Component {
         >
           <Editor
             ref={this.setEditorReference}
-            onTab={this.onTab}
-            onUpArrow={this.onUpDownArrow}
-            onDownArrow={this.onUpDownArrow}
+            keyBindingFn={this.keyBindingFn}
             editorState={editorState}
             onChange={this.onChange}
             blockStyleFn={blockStyleFn}
