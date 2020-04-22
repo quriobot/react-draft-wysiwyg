@@ -15,85 +15,6 @@ import {
   blockRenderMap,
   getCustomStyleMap,
   extractInlineStyle,
-<<<<<<< HEAD
-  getSelectedBlocksType
-} from "draftjs-utils";
-import classNames from "classnames";
-import ModalHandler from "../event-handler/modals";
-import FocusHandler from "../event-handler/focus";
-import KeyDownHandler from "../event-handler/keyDown";
-import SuggestionHandler from "../event-handler/suggestions";
-import blockStyleFn from "../utils/BlockStyle";
-import { mergeRecursive } from "../utils/toolbar";
-import { hasProperty, filter } from "../utils/common";
-import { handlePastedText } from "../utils/handlePaste";
-import Controls from "../controls";
-import getLinkDecorator from "../decorators/Link";
-import getMentionDecorators from "../decorators/Mention";
-import getHashtagDecorator from "../decorators/HashTag";
-import getBlockRenderFunc from "../renderer";
-import defaultToolbar from "../config/defaultToolbar";
-import localeTranslations from "../i18n";
-import "./styles.css";
-import "../../css/Draft.css";
-
-export default class WysiwygEditor extends Component {
-  static propTypes = {
-    onChange: PropTypes.func,
-    onEditorStateChange: PropTypes.func,
-    onContentStateChange: PropTypes.func,
-    // initialContentState is deprecated
-    initialContentState: PropTypes.object,
-    defaultContentState: PropTypes.object,
-    contentState: PropTypes.object,
-    editorState: PropTypes.object,
-    defaultEditorState: PropTypes.object,
-    toolbarOnFocus: PropTypes.bool,
-    spellCheck: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
-    stripPastedStyles: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
-    toolbar: PropTypes.object,
-    toolbarCustomButtons: PropTypes.array,
-    toolbarClassName: PropTypes.string,
-    toolbarHidden: PropTypes.bool,
-    locale: PropTypes.string,
-    localization: PropTypes.object,
-    editorClassName: PropTypes.string,
-    wrapperClassName: PropTypes.string,
-    toolbarStyle: PropTypes.object,
-    editorStyle: PropTypes.object,
-    wrapperStyle: PropTypes.object,
-    uploadCallback: PropTypes.func,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onTab: PropTypes.func,
-    mention: PropTypes.object,
-    hashtag: PropTypes.object,
-    textAlignment: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    readOnly: PropTypes.bool,
-    tabIndex: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
-    placeholder: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaLabel: PropTypes.string,
-    ariaOwneeID: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaActiveDescendantID: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaAutoComplete: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaDescribedBy: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaExpanded: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    ariaHasPopup: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    customBlockRenderFunc: PropTypes.func,
-    wrapperId: PropTypes.number,
-    customDecorators: PropTypes.array,
-    editorRef: PropTypes.func
-  };
-
-  static defaultProps = {
-    toolbarOnFocus: false,
-    toolbarHidden: false,
-    stripPastedStyles: false,
-    localization: { locale: "en", translations: {} },
-    customDecorators: []
-  };
-
-=======
   getSelectedBlocksType,
 } from 'draftjs-utils';
 import classNames from 'classnames';
@@ -116,7 +37,6 @@ import './styles.css';
 import '../../css/Draft.css';
 
 class WysiwygEditor extends Component {
->>>>>>> origin/master
   constructor(props) {
     super(props);
     const toolbar = mergeRecursive(defaultToolbar, props.toolbar);
@@ -475,30 +395,12 @@ class WysiwygEditor extends Component {
     return false;
   };
 
-<<<<<<< HEAD
-  keyBindingFn = (e) => {
-    // arrowDown and arrowUp
-    if (e.keyCode === 40 || e.keyCode === 38) {
-      this.onUpDownArrow(e);
-      return null;
-    }
-    if (e.keyCode === 9) {
-      this.onTab(e);
-      return null;
-    }
-    return getDefaultKeyBinding(e);
-  }
-
-  preventDefault: Function = (event: Object) => {
-    if (event.target.tagName === "INPUT" || event.target.tagName === "LABEL" || event.target.tagName === "TEXTAREA") {
-=======
   preventDefault = event => {
     if (
       event.target.tagName === 'INPUT' ||
       event.target.tagName === 'LABEL' ||
       event.target.tagName === 'TEXTAREA'
     ) {
->>>>>>> origin/master
       this.focusHandler.onInputMouseDown();
     } else {
       event.preventDefault();
