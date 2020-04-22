@@ -175,21 +175,6 @@ class Link extends Component {
       'insert-characters'
     );
 
-    // insert a blank space after link
-      selection = newEditorState.getSelection().merge({
-        anchorOffset: selection.get("anchorOffset") + linkTitle.length,
-        focusOffset: selection.get("anchorOffset") + linkTitle.length
-      });
-      newEditorState = EditorState.acceptSelection(newEditorState, selection);
-      contentState = Modifier.insertText(
-        newEditorState.getCurrentContent(),
-        selection,
-        " ",
-        newEditorState.getCurrentInlineStyle(),
-        undefined
-      );
-    }
-
     if (trailingWhitespace) {
       selection = newEditorState.getSelection().merge({
         anchorOffset: selection.get('anchorOffset') + linkTitle.length,
